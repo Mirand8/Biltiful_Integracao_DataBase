@@ -82,6 +82,36 @@ namespace ProjBiltiful.DataBase
             return clientes;
         }
 
+        public Cliente GetCliente(string cpf)
+        {
+            Cliente cliente;
+
+            var sql = $"SELECT * FROM Cliente WHERE CPF = '{cpf}'";
+
+            using (var connection = new SqlConnection(DBHelper.GetDBConnectionString()))
+            {
+                using (var cmd = new SqlCommand(sql, connection))
+                {
+                    cmd.CommandType = CommandType.Text;
+                    connection.Open();
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        reader.Read();
+                        var nCpf = reader["CPF"].ToString();
+                        var nome = reader["Nome"].ToString();
+                        var dataNasc = Convert.ToDateTime(reader["DataNasc"]);
+                        var sexo = Convert.ToChar(reader["Sexo"]);
+                        var ultimaCompra = Convert.ToDateTime(reader["Ultima_Compra"]);
+                        var dataCadastro = Convert.ToDateTime(reader["Data_Cadastro"]);
+                        var situacao = Convert.ToChar(reader["Situacao"]);
+                        cliente = new Cliente(cpf, nome, dataNasc, sexo, ultimaCompra, dataCadastro, situacao);
+                    }
+                    connection.Close();
+                }
+            }
+            return cliente;
+        }
+
         public void AtualizarCliente(string nome, string cpf)
         {
             Console.WriteLine("Atualizando cliente: " + cpf);

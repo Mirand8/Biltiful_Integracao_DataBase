@@ -1,5 +1,4 @@
-﻿using CadastrosBasicos.ManipulaArquivos;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 
@@ -7,8 +6,6 @@ namespace CadastrosBasicos
 {
     public class Fornecedor
     {
-        public Write write = new Write();
-        public Read read = new Read();
         public string CNPJ { get; set; }
         public string RazaoSocial { get; set; }
         public DateTime DataAbertura { get; set; }
@@ -163,7 +160,7 @@ namespace CadastrosBasicos
         {
             return CNPJ + RazaoSocial + DataAbertura.ToString("dd/MM/yyyy") + UltimaCompra.ToString("dd/MM/yyyy") + DataCadastro.ToString("dd/MM/yyyy") + Situacao;
         }
-        public Fornecedor Editar()
+         public Fornecedor Editar()
         {
             Fornecedor fornecedor;
             Console.WriteLine("Somente algumas informacoes podem ser alterada como (Razao social/situacao), caso nao queira alterar alguma informacao pressione enter!");
