@@ -1,12 +1,13 @@
 # PROJETO BILTIFUL
 
 <h3> O que faltou: </h3>
-- Integrar banco de dados com:<br>
-   - Fornecedor<br>
-   - Materia Prima<br>
-   - Produto<br>
-   - Compra de Materia Prima<br>
-   - Itens da Compra de Materia Prima<br>
-   - Producao<br>
-   - Venda de Produtos<br>
-   - Itens da Venda de Produtos<br>
+Integrar banco de dados com:<br>
+<ul>
+   <li>Fornecedor</li>
+   <li>Materia Prima</li>
+   <li>Produto</li>
+   <li>Compra de Materia Prima</li>
+   <li>Itens da Compra de Materia Prima</li>
+   <li>Venda de Produtos</li>
+   <li>Itens da Venda de Produtos</li>
+</ul> 
